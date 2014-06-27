@@ -10,6 +10,7 @@
                  [enlive "1.1.5"]
                  [clygments "0.1.1"]
                  [optimus "0.14.2"]
+                 [mapdown "0.2.1"]
                  [me.raynes/cegdown "0.1.1"]]
   :ring {:handler odinodinstatic.core/app}
   :aliases {"build-site" ["run" "-m" "odinodinstatic.core/export"]}

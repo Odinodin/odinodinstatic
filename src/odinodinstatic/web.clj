@@ -1,4 +1,4 @@
-(ns odinodinstatic.core
+(ns odinodinstatic.web
   (:require [stasis.core :as stasis]
             [optimus.assets :as assets]
             [optimus.export]
@@ -15,8 +15,6 @@
   [:autolinks :fenced-code-blocks :strikethrough])
 
 (defn render-markdown-page [page]
-  (println "PAGE2")
-  (println page)
   (layout/layout-page (md/to-html page pegdown-options)))
 
 ;; Can fix this to avoid having to have content in /about/index.html ...
@@ -32,10 +30,9 @@
 
 (defn prepare-pages [pages]
   (zipmap (keys pages)
-          ;; by sending a function and not a string, stasis will only generate
+          ;; by sending a function and not a string containing HTML, stasis will only generate
           ;; pages on-demand, thus improving the development process
           (map #(fn [req] (highlight/highlight-code-blocks %)) (vals pages))))
-
 
 (defn get-assets []
   (assets/load-assets "public" [#".*"]))
@@ -45,7 +42,7 @@
   (stasis/merge-page-sources
     {:public (stasis/slurp-directory "resources/public" #".*\.(html|css|js|png)$")
      :partials (partial-pages (stasis/slurp-directory "resources/partials" #".*\.html$"))
-     :markdown (markdown-pages (stasis/slurp-directory "resources/md" #".*\.md$"))}))
+     :markdown (markdown-pages (stasis/slurp-directory "resources/posts" #".*\.md$"))}))
 
 (defn get-pages []
   (prepare-pages (get-raw-pages)))
