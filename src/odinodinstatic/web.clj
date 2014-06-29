@@ -8,7 +8,7 @@
             [clojure.java.io :as io]
             [clojure.string :as str]
             [mapdown.core :as mapdown]
-            [odinodinstatic.util :refer [fmap]]
+            [odinodinstatic.util :refer [map-vals map-keys]]
             [odinodinstatic.highlight :as highlight]
             [odinodinstatic.validation :as validation]
             [odinodinstatic.pages :as pages]))
@@ -17,7 +17,7 @@
   "Highlights code blocks"
   ;; by sending a function and not a string containing HTML, stasis will only generate
   ;; pages on-demand, thus improving the development process
-  (fmap
+  (map-vals
     #(fn [_] (highlight/highlight-code-blocks %))
     pages))
 
@@ -25,7 +25,9 @@
   (assets/load-assets "public" [#".*"]))
 
 (defn load-content []
-  {:blog-posts (mapdown/slurp-directory "resources/posts" #"\.md$")})
+  {:blog-posts (->>
+                 (mapdown/slurp-directory "resources/posts" #"\.md$")
+                 (map-keys #(str/replace % #"\.md$" "")))})
 
 (defn get-pages []
   (-> (load-content)
