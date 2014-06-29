@@ -1,5 +1,5 @@
 :title IntelliJ - a nerd crush
-:published 2013-01-18 23:14
+:published 2013-01-18
 :body
 
 I've been a huge [IntelliJ](http://www.jetbrains.com/idea) fan ever since I started programming Java and I've spent a lot of effort learning the tool. I thought I'd share some of my favourite features; perhaps you will find them useful too.

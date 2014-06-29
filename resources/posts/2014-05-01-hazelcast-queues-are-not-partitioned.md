@@ -1,5 +1,5 @@
 :title Hazelcast queues are not partitioned
-:published 2014-05-01 11:40:09 +0200
+:published 2014-05-01
 :body
 
 Der. Da er det sagt, i tilfelle du leter i [dokumentasjonen](http://www.hazelcast.org/docs/latest/manual/html/queue.html) og savner en bedre beskrivelse. 

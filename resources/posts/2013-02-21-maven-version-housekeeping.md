@@ -1,5 +1,5 @@
 :title Maven Version Housekeeping
-:published 2013-02-21 21:05
+:published 2013-02-21
 :body
 
 It is inevitable. In any project of a certain size, after a while, you are faced with the challenge of rotting dependencies. To be more precise, the world has moved on and you, for whatever reason, want to keep up.  

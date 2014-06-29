@@ -1,5 +1,5 @@
 :title Auto-formattering i Light Table
-:published 2014-03-01 13:43
+:published 2014-03-01
 :body
 
 [Light Table](http://www.lighttable.com/) er en fascinerende [open source](https://github.com/LightTable/LightTable) editor med en arkitektur som gjør den lett å tilpasse og utvide. 

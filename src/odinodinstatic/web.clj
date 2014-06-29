@@ -25,7 +25,7 @@
   (assets/load-assets "public" [#".*"]))
 
 (defn load-content []
-  {:blog-posts (fmap :body (mapdown/slurp-directory "resources/posts" #"\.md$"))})
+  {:blog-posts (mapdown/slurp-directory "resources/posts" #"\.md$")})
 
 (defn get-pages []
   (-> (load-content)

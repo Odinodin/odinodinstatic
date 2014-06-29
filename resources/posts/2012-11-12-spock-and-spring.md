@@ -1,5 +1,5 @@
 :title Spock and Spring
-:published 2012-11-12 20:48
+:published 2012-11-12
 :body
 
 [Spock](http://www.spockframework.org) is a really great testing framework that can be used to make better, more focused Java and Groovy tests of any kind. It builds on top of JUnit, and runs everywhere it does. This means Spock tests will run in your IDE, your build environment and on you continuous integration server. The key selling point of Spock is that it increases readability by enforcing structure and removing unecessary boilerplate.

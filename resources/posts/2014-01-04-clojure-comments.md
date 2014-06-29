@@ -1,5 +1,5 @@
 :title Clojure comments
-:published 2014-01-04 09:42
+:published 2014-01-04
 :body
 
 There are multiple mechanisms for commenting Clojure code. I thought I'd write up my current knowledge of the subject, perhaps it will be useful for others as well. If you see any improvements, please feel free to comment (\*snicker\*).
