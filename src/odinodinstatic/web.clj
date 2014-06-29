@@ -8,22 +8,17 @@
             [clojure.java.io :as io]
             [clojure.string :as str]
             [mapdown.core :as mapdown]
-
+            [odinodinstatic.util :refer [fmap]]
             [odinodinstatic.highlight :as highlight]
             [odinodinstatic.validation :as validation]
             [odinodinstatic.pages :as pages]))
-
-;; TODO Move to util
-(defn fmap [fn amap]
-  (zipmap (keys amap)
-          (map fn (vals amap))))
 
 (defn prepare-pages [pages]
   "Highlights code blocks"
   ;; by sending a function and not a string containing HTML, stasis will only generate
   ;; pages on-demand, thus improving the development process
   (fmap
-    #(fn [req] (highlight/highlight-code-blocks %))
+    #(fn [_] (highlight/highlight-code-blocks %))
     pages))
 
 (defn get-assets []
