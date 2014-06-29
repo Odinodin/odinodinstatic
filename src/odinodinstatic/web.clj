@@ -7,45 +7,36 @@
             [optimus.strategies :refer [serve-live-assets]]
             [clojure.java.io :as io]
             [clojure.string :as str]
-            [me.raynes.cegdown :as md]
+            [mapdown.core :as mapdown]
+
             [odinodinstatic.highlight :as highlight]
-            [odinodinstatic.layout :as layout]))
+            [odinodinstatic.validation :as validation]
+            [odinodinstatic.pages :as pages]))
 
-(def pegdown-options ;; https://github.com/sirthias/pegdown
-  [:autolinks :fenced-code-blocks :strikethrough])
-
-(defn render-markdown-page [page]
-  (layout/layout-page (md/to-html page pegdown-options)))
-
-;; Can fix this to avoid having to have content in /about/index.html ...
-(defn partial-pages [pages]
-  "Add layout to each page.
-  pages is a map of {'path (i.e about)' 'page content as string'}"
-  (zipmap (keys pages)
-          (map layout/layout-page (vals pages))))
-
-(defn markdown-pages [pages]
-  (zipmap (map #(str/replace % #"\.md$" "") (keys pages))
-          (map render-markdown-page (vals pages))))
+;; TODO Move to util
+(defn fmap [fn amap]
+  (zipmap (keys amap)
+          (map fn (vals amap))))
 
 (defn prepare-pages [pages]
-  (zipmap (keys pages)
-          ;; by sending a function and not a string containing HTML, stasis will only generate
-          ;; pages on-demand, thus improving the development process
-          (map #(fn [req] (highlight/highlight-code-blocks %)) (vals pages))))
+  "Highlights code blocks"
+  ;; by sending a function and not a string containing HTML, stasis will only generate
+  ;; pages on-demand, thus improving the development process
+  (fmap
+    #(fn [req] (highlight/highlight-code-blocks %))
+    pages))
 
 (defn get-assets []
   (assets/load-assets "public" [#".*"]))
 
-(defn get-raw-pages []
-  ;; Merge page sources throws exception if two paths collide
-  (stasis/merge-page-sources
-    {:public (stasis/slurp-directory "resources/public" #".*\.(html|css|js|png)$")
-     :partials (partial-pages (stasis/slurp-directory "resources/partials" #".*\.html$"))
-     :markdown (markdown-pages (stasis/slurp-directory "resources/posts" #".*\.md$"))}))
+(defn load-content []
+  {:blog-posts (fmap :body (mapdown/slurp-directory "resources/posts" #"\.md$"))})
 
 (defn get-pages []
-  (prepare-pages (get-raw-pages)))
+  (-> (load-content)
+      ;validation/validate-content
+      pages/create-pages
+      prepare-pages))
 
 (def app
   (optimus/wrap (stasis/serve-pages get-pages)

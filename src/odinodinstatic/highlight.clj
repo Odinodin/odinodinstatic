@@ -15,7 +15,8 @@
 
 (defn- highlight [node]
   (let [code (->> node :content (apply str))
-        lang (->> node :attrs :class keyword)]
+        lang (or (->> node :attrs :class keyword)
+                 "sh")]
     (assoc node :content (-> code
                              (pygments/highlight lang :html)
                              extract-code))))

@@ -11,8 +11,9 @@
                  [clygments "0.1.1"]
                  [optimus "0.14.2"]
                  [mapdown "0.2.1"]
+                 [prismatic/schema "0.2.0"]
                  [me.raynes/cegdown "0.1.1"]]
-  :ring {:handler odinodinstatic.core/app}
-  :aliases {"build-site" ["run" "-m" "odinodinstatic.core/export"]}
+  :ring {:handler odinodinstatic.web/app}
+  :aliases {"build-site" ["run" "-m" "odinodinstatic.web/export"]}
 
   :profiles {:dev {:plugins [[lein-ring "0.8.10"]]}})
