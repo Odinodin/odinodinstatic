@@ -1,14 +1,106 @@
 @import url(../css/monokai.css);
 
 body {
-    background-color: black;
-    color:white;
+    font: 16px Helvetica, arial, freesans, clean, sans-serif;
+    background-color: #1a1a1a;
+    color: #c0c0c0;
+}
+
+a:link, a:visited {
+    color: #ff7472;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
 }
 
 #main {
     max-width: 960px;
     margin: 0 auto;
+}
+
+.vertical-list {
     display: flex;
     flex-direction: column;
-    align-content: space-between;
+    align-content: stretch;
+    justify-content: flex-start;
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+
+.horizontal-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+
+.flex-item {
+    align-self: auto;
+}
+
+.box {
+    align-self: stretch;
+    background-color: #2a2a2a;
+    margin: 0.2em;
+    padding: 0.4em;
+}
+
+.box-padder {
+    align-self: stretch;
+}
+
+.box:hover {
+    background-color: #5d5d5d;
+    transition: background-color 0.5s ease;
+}
+
+.bottom-box {
+    align-self: flex-start;
+    background-color: #2a2a2a;
+    margin: 0.2em;
+    padding: 0.4em;
+}
+
+.navbar {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+}
+
+.navbar .title {
+    flex-basis: auto;
+    font-size: 2em;
+    background-color: #ff7472;
+    align-content: center;
+    line-height: 2em;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: black;
+    margin: 0.2em 0.2em 0.2em 0.1em;
+}
+
+.navbar .nav-item {
+    text-decoration: none;
+    padding: 1em;
+    line-height: 2em;
+    color: #c0c0c0;
+    align-content: center;
+    align-self: center;
+    background-color: #2a2a2a;
+    transition: background-color 0.5s ease;
+}
+
+.navbar .ender {
+    margin-left: auto;
+    margin-right: 0.2em;
+}
+
+.nav-item:hover {
+    background-color: #747474;
 }

@@ -6,12 +6,9 @@
             [odinodinstatic.layout :as layout]
             [odinodinstatic.util :refer [map-vals]]))
 
-
 (def pegdown-options                                        ;; https://github.com/sirthias/pegdown
   [:autolinks :fenced-code-blocks :strikethrough])
 
-(defn render-markdown-page [page]
-  )
 
 (defn render-blog-post [blog-post]
   (layout/layout-page
@@ -20,7 +17,7 @@
       (md/to-html (:body blog-post) pegdown-options)))
   )
 
-;; TODO Filter out md before this stage ..
+;; TODO Rename functions ...
 (defn markdown-pages [pages]
   (map-vals render-blog-post pages))
 
@@ -31,9 +28,9 @@
 (defn blog-list-page [blog-posts]
   {"/"
     (layout/layout-page
-      [:ul
+      [:ul {:class "vertical-list"}
        (for [[path post] blog-posts]
-         [:li (:published post) " " (link-to path
+         [:li {:class "box"} (:published post) " " (link-to path
                                              (:title post))])])})
 
 (defn create-pages [content]
