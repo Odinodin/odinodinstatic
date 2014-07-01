@@ -89,7 +89,7 @@ a:hover {
     text-decoration: none;
     padding: 1em;
     line-height: 2em;
-    color: #c0c0c0;
+    color: #ff7472;
     align-content: center;
     align-self: center;
     background-color: #2a2a2a;
@@ -103,4 +103,13 @@ a:hover {
 
 .nav-item:hover {
     background-color: #747474;
+}
+
+pre {
+    background-color: #373737;
+    padding: 0.2em;
+}
+
+.clickable {
+    cursor: pointer;
 }

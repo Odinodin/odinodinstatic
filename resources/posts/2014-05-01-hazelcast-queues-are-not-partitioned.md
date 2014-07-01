@@ -1,4 +1,4 @@
-:title Hazelcast queues are not partitioned
+:title Hazelcast-køer er ikke partisjonerte
 :published 2014-05-01
 :body
 

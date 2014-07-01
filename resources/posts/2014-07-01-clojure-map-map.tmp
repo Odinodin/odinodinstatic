@@ -1,0 +1,28 @@
+:title Mapping maps
+:published 2014-07-01
+:body
+
+
+```clj
+(defn map-vals [fn m]
+  (zipmap (keys m)
+          (map fn (vals m))))
+```
+
+Eksempel:
+
+```clj
+(map-vals inc {:a 1 :b 2}) => {:a 2 :b 3}
+```
+
+```clj
+(defn map-keys [fn m]
+  (zipmap (map fn (keys m))
+          (vals m)))
+```
+
+Eksempel:
+
+```clj
+(map keys inc {1 "a" 2 "b"}) => {2 "a" 3 "b"}
+```

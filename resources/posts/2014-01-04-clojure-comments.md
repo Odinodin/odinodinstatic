@@ -59,7 +59,8 @@ Note that both the comment macro and #_ requires the following code to be valid.
 
 ```clj
 (+ 1 2 #_( [ )) ; Unmatched bracket!
-user=> RuntimeException Unmatched delimiter: )  clojure.lang.Util.runtimeException (Util.java:219)
+user=> RuntimeException Unmatched delimiter: )  
+       clojure.lang.Util.runtimeException (Util.java:219)
 ```
 
 In general, only write comments where necessary; code should preferrably be self-explanatory.

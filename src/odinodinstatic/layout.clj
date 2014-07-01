@@ -1,7 +1,7 @@
 (ns odinodinstatic.layout
   (:require [hiccup.page :refer [html5]]
             [hiccup.element :refer [link-to]]
-            ))
+            [odinodinstatic.hiccup :refer [goto]]))
 
 (defn layout-page [page]
   (html5
@@ -14,15 +14,17 @@
     [:body
      [:div {:id "main" :class "vertical-list"}
       [:div {:class "navbar flex-item"}
-       [:div {:class "title"} "Odinodin"]
-       [:div {:class "nav-item"} (link-to "/" "Posts")]
-       [:div {:class "nav-item ender"} (link-to "http://www.kodemaker.no" "Kodemaker")]]
+       [:div {:class "title"} "Odin"]
+       [:div {:class "nav-item clickable"
+              :onclick (goto "/")} "Posts"]
+       [:div {:class "nav-item ender clickable"
+              :onclick (goto "http://github.com/odinodin/odinodinstatic")} "Source"]]
       [:div.content {:class "flex-item"} page]
       [:div {:id "bottom" :class "flex-item horizontal-list"}
-       (link-to {:class "bottom-box"} "http://www.kodemaker.no/cv/odin/" "CV")
-       (link-to {:class "bottom-box"} "https://twitter.com/odinodin" "Twitter")
-       (link-to {:class "bottom-box"} "http://www.linkedin.com/in/odinholestandal" "Linkedin")
-       (link-to {:class "bottom-box"} "http://stackoverflow.com/users/273594/odinodin" "stackoverflow")
-       (link-to {:class "bottom-box"} "http://www.kodemaker.no" "Kodemaker")
-       (link-to {:class "bottom-box"} "https://www.flickr.com/photos/odinodin" "Flickr")
-       (link-to {:class "bottom-box"} "http://500px.com/odinodin" "500px")]]]))
+       (link-to {:class "bottom-box clickable"} "http://www.kodemaker.no/cv/odin/" "CV")
+       (link-to {:class "bottom-box clickable"} "https://twitter.com/odinodin" "Twitter")
+       (link-to {:class "bottom-box clickable"} "http://www.linkedin.com/in/odinholestandal" "Linkedin")
+       (link-to {:class "bottom-box clickable"} "http://stackoverflow.com/users/273594/odinodin" "stackoverflow")
+       (link-to {:class "bottom-box clickable"} "http://www.kodemaker.no" "Kodemaker")
+       (link-to {:class "bottom-box clickable"} "https://www.flickr.com/photos/odinodin" "Flickr")
+       (link-to {:class "bottom-box clickable"} "http://500px.com/odinodin" "500px")]]]))

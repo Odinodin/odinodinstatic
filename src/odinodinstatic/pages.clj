@@ -4,6 +4,7 @@
             [me.raynes.cegdown :as md]
             [hiccup.element :refer [link-to]]
             [odinodinstatic.layout :as layout]
+            [odinodinstatic.hiccup :refer [goto]]
             [odinodinstatic.util :refer [map-vals]]))
 
 (def pegdown-options                                        ;; https://github.com/sirthias/pegdown
@@ -14,8 +15,7 @@
   (layout/layout-page
     (list
       [:h1 (:title blog-post)]
-      (md/to-html (:body blog-post) pegdown-options)))
-  )
+      (md/to-html (:body blog-post) pegdown-options))))
 
 ;; TODO Rename functions ...
 (defn markdown-pages [pages]
@@ -26,12 +26,14 @@
   (markdown-pages blog-posts))
 
 (defn blog-list-page [blog-posts]
-  {"/"
-    (layout/layout-page
-      [:ul {:class "vertical-list"}
-       (for [[path post] blog-posts]
-         [:li {:class "box"} (:published post) " " (link-to path
-                                             (:title post))])])})
+  (let [sorted-blog-posts (-> (sort-by key blog-posts) reverse)]
+    {"/"
+      (layout/layout-page
+        [:ul {:class "vertical-list"}
+         (for [[path post] sorted-blog-posts]
+           [:li
+            {:class "box clickable" :onclick (goto path)}
+            (:published post) " " (link-to path (:title post))])])}))
 
 (defn create-pages [content]
   (stasis/merge-page-sources
