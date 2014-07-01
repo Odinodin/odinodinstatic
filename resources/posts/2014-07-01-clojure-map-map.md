@@ -34,7 +34,7 @@ Igjen passer zipmap som hånd i hanske.
 Eksempel:
 
 ```clj
-(map keys inc {1 "a" 2 "b"}) 
+(map-keys inc {1 "a" 2 "b"}) 
 => {2 "a" 3 "b"}
 ```
 
