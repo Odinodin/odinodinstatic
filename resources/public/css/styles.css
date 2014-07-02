@@ -46,6 +46,7 @@ a:hover {
 .box {
     align-self: stretch;
     background-color: #2a2a2a;
+    display: block;
     margin: 0.2em;
     padding: 0.4em;
 }
@@ -86,6 +87,7 @@ a:hover {
 }
 
 .navbar .nav-item {
+    display: block;
     text-decoration: none;
     padding: 1em;
     line-height: 2em;
@@ -110,6 +112,6 @@ pre {
     padding: 0.2em;
 }
 
-.clickable {
-    cursor: pointer;
+.contrast {
+    color: silver;
 }

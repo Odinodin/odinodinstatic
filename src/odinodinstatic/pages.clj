@@ -1,11 +1,9 @@
 (ns odinodinstatic.pages
-  (:require [stasis.core :as stasis]
-            [clojure.string :as str]
+  (:require [hiccup.element :refer [link-to]]
             [me.raynes.cegdown :as md]
-            [hiccup.element :refer [link-to]]
             [odinodinstatic.layout :as layout]
-            [odinodinstatic.hiccup :refer [goto]]
-            [odinodinstatic.util :refer [map-vals]]))
+            [odinodinstatic.util :refer [map-vals]]
+            [stasis.core :as stasis]))
 
 (def pegdown-options                                        ;; https://github.com/sirthias/pegdown
   [:autolinks :fenced-code-blocks :strikethrough])
@@ -32,8 +30,7 @@
         [:ul {:class "vertical-list"}
          (for [[path post] sorted-blog-posts]
            [:li
-            {:class "box clickable" :onclick (goto path)}
-            (:published post) " " (link-to path (:title post))])])}))
+            (link-to {:class "box"} path (list [:span.contrast (:published post)] " " (:title post)))])])}))
 
 (defn create-pages [content]
   (stasis/merge-page-sources
