@@ -2,7 +2,7 @@
 :published 2014-07-01
 :body
 
-Når jeg jobber med Clojure kommer jeg av og til bort i tilfeller hvor jeg har en map og ønsker transformere 
+Når jeg jobber med Clojure kommer jeg av og til bort i tilfeller hvor jeg har en map og ønsker å transformere 
 nøklene eller verdiene i mappet. Overraskende nok så har jeg ikke funnet noen funksjoner som tilbyr dette ut av boksen
  i de innebygde Clojure-bibliotekene. 
  
