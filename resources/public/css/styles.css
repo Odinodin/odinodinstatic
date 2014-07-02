@@ -86,6 +86,7 @@ a:hover {
 }
 
 .navbar .nav-item {
+    display: block;
     text-decoration: none;
     padding: 1em;
     line-height: 2em;

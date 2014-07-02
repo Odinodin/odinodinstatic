@@ -1,7 +1,6 @@
 (ns odinodinstatic.layout
   (:require [hiccup.page :refer [html5]]
-            [hiccup.element :refer [link-to]]
-            [odinodinstatic.hiccup :refer [goto]]))
+            [hiccup.element :refer [link-to]]))
 
 (defn layout-page [page]
   (html5
@@ -15,10 +14,10 @@
      [:div {:id "main" :class "vertical-list"}
       [:div {:class "navbar flex-item"}
        [:div {:class "title"} "Odin"]
-       [:div {:class "nav-item clickable"
-              :onclick (goto "/")} "Posts"]
-       [:div {:class "nav-item ender clickable"
-              :onclick (goto "http://github.com/odinodin/odinodinstatic")} "Source"]]
+       [:a {:class "nav-item clickable"
+            :href "/"} "Posts"]
+       [:a {:class "nav-item ender clickable"
+            :href "http://github.com/odinodin/odinodinstatic"} "Source"]]
       [:div.content {:class "flex-item"} page]
       [:div {:id "bottom" :class "flex-item horizontal-list"}
        (link-to {:class "bottom-box clickable"} "http://www.kodemaker.no/cv/odin/" "CV")
