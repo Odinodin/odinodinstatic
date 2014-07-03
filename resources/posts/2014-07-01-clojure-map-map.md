@@ -18,8 +18,8 @@ Zipmap er en fin funksjon å bruke til dette.
 Eksempel:
 
 ```clj
-(map-vals inc {:a 1 :b 2}) 
-=> {:a 2 :b 3}
+(map-vals inc {:a 1, :b 2}) 
+=> {:a 2, :b 3}
 ```
 
 Tilsvarende, hvordan transformerer man nøklene mens man beholder verdiene i map'et? 
@@ -34,8 +34,8 @@ Igjen passer zipmap som hånd i hanske.
 Eksempel:
 
 ```clj
-(map-keys inc {1 "a" 2 "b"}) 
-=> {2 "a" 3 "b"}
+(map-keys inc {1 "a", 2 "b"}) 
+=> {2 "a", 3 "b"}
 ```
 
 Avslutningsvis så er det kjekt å ha en funksjon som mapper over både nøkler og verdier samtidig, så slipper vi gjøre

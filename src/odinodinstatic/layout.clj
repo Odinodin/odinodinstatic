@@ -9,15 +9,15 @@
      [:meta {:name    "viewport"
              :content "width=device-width, initial-scale=1.0"}]
      [:title "Odin odin blog"]
-     [:link {:rel "stylesheet" :href "/css/styles.css"}]]
+     [:link {:rel "stylesheet" :href "/css/responsive.css"}]]
     [:body
      [:div {:id "main" :class "vertical-list"}
       [:div {:class "navbar flex-item"}
        [:div {:class "title"} "Odin"]
        [:a {:class "nav-item"
-            :href "/"} "Posts"]
+            :href "/"} "Poster"]
        [:a {:class "nav-item ender"
-            :href "http://github.com/odinodin/odinodinstatic"} "Source"]]
+            :href "http://github.com/odinodin/odinodinstatic"} "Kildekode"]]
       [:div.content {:class "flex-item"} page]
       [:div {:id "bottom" :class "flex-item horizontal-list"}
        (link-to {:class "bottom-box"} "http://www.kodemaker.no/cv/odin/" "CV")

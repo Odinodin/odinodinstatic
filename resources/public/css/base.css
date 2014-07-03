@@ -32,8 +32,8 @@ a:hover {
 
 .horizontal-list {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    flex-flow: row wrap;
+    justify-content: center;
     list-style-type: none;
     padding:0;
     margin:0;
@@ -98,20 +98,10 @@ a:hover {
     transition: background-color 0.5s ease;
 }
 
-.navbar .ender {
-    margin-left: auto;
-    margin-right: 0.2em;
-}
+.navbar .ender {margin-left: auto;margin-right: 0.2em;}
 
-.nav-item:hover {
-    background-color: #747474;
-}
+.nav-item:hover {background-color: #747474;}
 
-pre {
-    background-color: #373737;
-    padding: 0.2em;
-}
+pre {background-color: #373737;padding: 0.2em;}
 
-.contrast {
-    color: silver;
-}
+.contrast {color: silver;}

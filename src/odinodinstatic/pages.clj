@@ -13,6 +13,7 @@
   (layout/layout-page
     (list
       [:h1 (:title blog-post)]
+      [:h4 (:published blog-post)]
       (md/to-html (:body blog-post) pegdown-options))))
 
 ;; TODO Rename functions ...
