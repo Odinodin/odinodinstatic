@@ -25,6 +25,12 @@ a:hover {
     flex-direction: column;
     align-content: stretch;
     justify-content: flex-start;
+
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    -webkit-align-content: stretch;
+    -webkit-justify-content: flex-start;
+
     list-style-type: none;
     padding:0;
     margin:0;
@@ -34,6 +40,11 @@ a:hover {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+
+    display: -webkit-flex;
+    -webkit-flex-flow: row wrap;
+    -webkit-justify-content: center;
+
     list-style-type: none;
     padding:0;
     margin:0;
@@ -41,10 +52,13 @@ a:hover {
 
 .flex-item {
     align-self: auto;
+    -webkit-align-self: auto;
 }
 
 .box {
     align-self: stretch;
+    -webkit-align-self: stretch;
+
     background-color: #2a2a2a;
     display: block;
     margin: 0.2em;
@@ -53,6 +67,7 @@ a:hover {
 
 .box-padder {
     align-self: stretch;
+    -webkit-align-self: stretch;
 }
 
 .box:hover {
@@ -62,6 +77,8 @@ a:hover {
 
 .bottom-box {
     align-self: flex-start;
+    -webkit-align-self: flex-start;
+
     background-color: #2a2a2a;
     margin: 0.2em;
     padding: 0.4em;
@@ -71,13 +88,22 @@ a:hover {
     display: flex;
     flex-flow: row;
     justify-content: flex-start;
+
+    display: -webkit-flex;
+    -webkit-flex-flow: row;
+    -webkit-justify-content: flex-start;
 }
 
 .navbar .title {
     flex-basis: auto;
+    -webkit-flex-basis: auto;
+
+    align-content: center;
+    -webkit-align-content: center;
+
     font-size: 2em;
     background-color: #ff7472;
-    align-content: center;
+
     line-height: 2em;
     text-align: center;
     padding-left: 1em;
@@ -94,6 +120,10 @@ a:hover {
     color: #ff7472;
     align-content: center;
     align-self: center;
+
+    -webkit-align-content: center;
+    -webkit-align-self: center;
+
     background-color: #2a2a2a;
     transition: background-color 0.5s ease;
 }
