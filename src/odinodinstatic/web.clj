@@ -31,7 +31,7 @@
 
 (defn get-pages []
   (-> (load-content)
-      ;validation/validate-content
+      validation/validate-content
       pages/create-pages
       prepare-pages))
 

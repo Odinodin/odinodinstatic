@@ -5,9 +5,8 @@
             [odinodinstatic.util :refer [map-vals]]
             [stasis.core :as stasis]))
 
-(def pegdown-options                                        ;; https://github.com/sirthias/pegdown
+(def pegdown-options  ;; https://github.com/sirthias/pegdown
   [:autolinks :fenced-code-blocks :strikethrough])
-
 
 (defn render-blog-post [blog-post]
   (layout/layout-page
@@ -16,15 +15,12 @@
       [:h4 (:published blog-post)]
       (md/to-html (:body blog-post) pegdown-options))))
 
-;; TODO Rename functions ...
-(defn markdown-pages [pages]
-  (map-vals render-blog-post pages))
+(defn- blog-post-pages [blog-posts]
+  "Render each blog post"
+  (map-vals render-blog-post blog-posts))
 
-;; TODO Make the markup for blog posts ...
-(defn blog-post-pages [blog-posts]
-  (markdown-pages blog-posts))
-
-(defn blog-list-page [blog-posts]
+(defn- blog-list-page [blog-posts]
+  "A list of blog posts with links to each post"
   (let [sorted-blog-posts (-> (sort-by key blog-posts) reverse)]
     {"/"
       (layout/layout-page
@@ -34,6 +30,7 @@
             (link-to {:class "box"} path (list [:span.contrast (:published post)] " " (:title post)))])])}))
 
 (defn create-pages [content]
+  "Converts raw content into HTML pages"
   (stasis/merge-page-sources
     {:blog-post-pages (blog-post-pages (:blog-posts content))
      :blog-list       (blog-list-page (:blog-posts content))}))
