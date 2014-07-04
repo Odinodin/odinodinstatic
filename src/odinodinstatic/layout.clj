@@ -1,5 +1,6 @@
 (ns odinodinstatic.layout
   (:require [hiccup.page :refer [html5]]
+            [clojure.java.io :as io]
             [hiccup.element :refer [link-to]]))
 
 (defn layout-page [page]
@@ -11,6 +12,7 @@
      [:title "Odin odin blog"]
      [:link {:rel "stylesheet" :href "/css/responsive.css"}]]
     [:body
+     [:script (slurp (io/resource "public/scripts/analytics.js"))]
      [:div {:id "main" :class "vertical-list"}
       [:div {:class "navbar flex-item"}
        [:div {:class "title"} "Odin"]
