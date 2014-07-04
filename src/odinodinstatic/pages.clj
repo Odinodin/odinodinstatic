@@ -27,7 +27,9 @@
         [:ul {:class "vertical-list"}
          (for [[path post] sorted-blog-posts]
            [:li
-            (link-to {:class "box"} path (list [:span.contrast (:published post)] " " (:title post)))])])}))
+            (link-to {:class "box horizontal-list"} path (list
+                                                           [:span.contrast {:class "post-date"} (:published post)]
+                                                           [:span {:class "post-title"} " " (:title post)]))])])}))
 
 (defn create-pages [content]
   "Converts raw content into HTML pages"

@@ -1,6 +1,9 @@
+body {font-size: 17px;}
 
+.navbar .nav-item {padding: 1em}
 
-
+/* post title on same line as date */
+.horizontal-list .post-title {display: inline;}
 
 
 

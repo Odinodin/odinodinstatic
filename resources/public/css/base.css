@@ -11,9 +11,7 @@ a:link, a:visited {
     text-decoration: none;
 }
 
-a:hover {
-    color: white;
-}
+a:hover {color: white;}
 
 #main {
     max-width: 960px;
@@ -106,8 +104,7 @@ a:hover {
 
     line-height: 2em;
     text-align: center;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 0em 1em;
     color: black;
     margin: 0.2em 0.2em 0.2em 0.1em;
 }
@@ -115,7 +112,7 @@ a:hover {
 .navbar .nav-item {
     display: block;
     text-decoration: none;
-    padding: 1em;
+    padding: 1em 0.6em;
     line-height: 2em;
     color: #ff7472;
     align-content: center;
@@ -126,6 +123,17 @@ a:hover {
 
     background-color: #2a2a2a;
     transition: background-color 0.5s ease;
+}
+
+.horizontal-list .post-date {
+    align-self: flex-start;
+    -webkit-align-self: flex-start;
+}
+
+/* post title below date on small screens */
+.horizontal-list .post-title {
+    display: flex;
+    display: -webkit-flex;
 }
 
 .navbar .ender {margin-left: auto;margin-right: 0.2em;}
