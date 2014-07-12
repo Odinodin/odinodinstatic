@@ -7,11 +7,15 @@
             [optimus.strategies :refer [serve-live-assets]]
             [clojure.java.io :as io]
             [clojure.string :as str]
+            [schema.core :as s]
             [mapdown.core :as mapdown]
             [odinodinstatic.util :refer [map-vals map-keys]]
             [odinodinstatic.highlight :as highlight]
-            [odinodinstatic.validation :as validation]
-            [odinodinstatic.pages :as pages]))
+            [odinodinstatic.validation :as v]
+            [odinodinstatic.pages :as p]))
+
+;; Globally enable Schema validation
+(schema.core/set-fn-validation! true)
 
 (defn prepare-pages [pages]
   "Highlights code blocks"
@@ -21,19 +25,22 @@
     #(fn [_] (highlight/highlight-code-blocks %))
     pages))
 
+
+(s/defn load-content :- {:blog-posts {v/Path v/BlogPost}} []
+        {:blog-posts (->>
+                       (mapdown/slurp-directory "resources/posts" #"\.md$")
+                       (map-keys #(str/replace % #"\.md$" "")))})
+
+
+(s/defn get-pages :- v/Routes []
+        (-> (load-content)
+            p/create-pages
+            prepare-pages))
+
+
+
 (defn get-assets []
   (assets/load-assets "public" [#".*"]))
-
-(defn load-content []
-  {:blog-posts (->>
-                 (mapdown/slurp-directory "resources/posts" #"\.md$")
-                 (map-keys #(str/replace % #"\.md$" "")))})
-
-(defn get-pages []
-  (-> (load-content)
-      validation/validate-content
-      pages/create-pages
-      prepare-pages))
 
 (def app
   (optimus/wrap (stasis/serve-pages get-pages)
@@ -41,7 +48,7 @@
                 optimizations/all
                 serve-live-assets))
 
-;; Export site
+;; Export site to dist/
 (def export-dir "dist")
 
 (defn export []

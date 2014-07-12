@@ -14,6 +14,7 @@
                  [prismatic/schema "0.2.0"]
                  [me.raynes/cegdown "0.1.1"]]
   :ring {:handler odinodinstatic.web/app}
+  :jvm-opts ["-Xmx1024m"]
   :aliases {"build-site" ["run" "-m" "odinodinstatic.web/export"]}
 
   :profiles {:dev {:plugins [[lein-ring "0.8.10"]]}})
