@@ -11,6 +11,7 @@
              :content "width=device-width, initial-scale=1.0"}]
      [:title "Odin odin blog"]
      [:link {:rel "stylesheet" :href "/css/responsive.css"}]]
+     [:link {:rel "shortcut icon" :type "image/png" :href "favicon.ico"}]
     [:body
      [:script (slurp (io/resource "public/scripts/analytics.js"))]
      [:div {:id "main" :class "vertical-list"}
