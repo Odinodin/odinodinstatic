@@ -1,4 +1,4 @@
-:title Podcasts for programmerere
+:title Podcaster for programmerere
 :published 2012-11-15
 :body
 

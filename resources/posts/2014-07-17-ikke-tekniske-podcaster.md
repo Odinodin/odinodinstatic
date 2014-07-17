@@ -1,4 +1,4 @@
-:title Ikke-tekniske podcaster
+:title Podcaster for alle
 :published 2014-07-15
 :body
 
