@@ -1,5 +1,5 @@
 :title Podcaster for programmerere
-:published 2012-11-15
+:published 2014-07-15
 :body
 
 Podcaster er en fin måte å utnytte tiden til noe fornuftig når man gjør kjedelige ting som å pusse opp eller 

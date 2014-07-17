@@ -1,8 +1,8 @@
 :title Podcaster for alle
-:published 2014-07-15
+:published 2014-07-17
 :body
 
-I tillegg til [podcastene om programmering](/2014-07-13-podcaster) så hører jeg også på populærvitenskapelige 
+I tillegg til [podcastene om programmering](/2014-07-15-podcaster) så hører jeg også på populærvitenskapelige 
 podcasts.
 
 Radio Lab
