@@ -10,6 +10,7 @@
 (def BlogPost
   {:title Str
    :published Str
+   (optional-key :dek) Str
    :body Str})
 
 ;; Routes is a map of Paths to page content

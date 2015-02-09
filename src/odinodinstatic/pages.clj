@@ -12,7 +12,8 @@
   (layout/layout-page
     (list
       [:h1 (:title blog-post)]
-      [:h4 (:published blog-post)]
+      (when-let [dek (:dek blog-post)] [:h3 dek])
+      [:h5 (:published blog-post)]
       (md/to-html (:body blog-post) pegdown-options))))
 
 (defn- blog-post-pages [blog-posts]
