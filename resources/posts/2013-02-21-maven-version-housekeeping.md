@@ -1,11 +1,10 @@
 :title Maven Version Housekeeping
 :published 2013-02-21
+:dek The versions-maven-plugin generates lots of noise. Unix can help manage it.
 :body
 
 It is inevitable. In any project of a certain size, after a while, you are faced with the challenge of rotting dependencies. To be more precise, the world has moved on and you, for whatever reason, want to keep up.  
 
-TLDR;
-The versions-maven-plugin generates lots of noise. Unix can help manage it.
 
 Step 1 - Figure out what has changed
 ====================================
