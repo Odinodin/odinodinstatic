@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="416" height="206" viewBox="0 0 416 206">
+  <defs>
+    <style>
+
+      .cls-3 {
+        fill: #323232;
+        stroke: #8c8c8c;
+        stroke-width: 13px;
+      }
+
+      .cls-5 {
+        font-size: 30.48px;
+      }
+
+      .cls-6 {
+        fill: #c0c0c0;
+        font-size: 30.48px;
+        font-family: "Helvetica";
+      }
+    </style>
+  </defs>
+  <g id="positionsvg">
+    <circle id="circle-1" class="cls-3" cx="67" cy="126" r="40"/>
+    <circle id="circle-2" class="cls-3" cx="304" cy="46" r="40"/>
+    <text class="cls-5" y="200px"><tspan class="cls-6">x,y = [20, 30]</tspan></text>
+    <text class="cls-5" x="242px" y="120px"><tspan class="cls-6">x,y = [50, 10]</tspan></text>
+  </g>
+</svg>
