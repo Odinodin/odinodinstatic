@@ -18,9 +18,9 @@
       [:div {:class "navbar flex-item"}
        [:div {:class "title"} "Odin"]
        [:a {:class "nav-item"
-            :href "/"} "Poster"]
+            :href "/"} "Posts"]
        [:a {:class "nav-item ender"
-            :href "http://github.com/odinodin/odinodinstatic"} "Kildekode"]]
+            :href "http://github.com/odinodin/odinodinstatic"} "Source"]]
       [:div.content {:class "flex-item"} page]
       [:div {:id "bottom" :class "flex-item horizontal-list"}
        (link-to {:class "bottom-box"} "http://www.kodemaker.no/cv/odin/" "CV")
