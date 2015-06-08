@@ -10,6 +10,7 @@
                  [enlive "1.1.5"]
                  [clygments "0.1.1"]
                  [optimus "0.14.2"]
+                 [org.clojure/data.xml "0.0.8"] ;; For Atom feed
                  [mapdown "0.2.1"]
                  [prismatic/schema "0.2.0"]
                  [me.raynes/cegdown "0.1.1"]]

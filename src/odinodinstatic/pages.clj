@@ -2,6 +2,7 @@
   (:require [hiccup.element :refer [link-to]]
             [me.raynes.cegdown :as md]
             [odinodinstatic.layout :as layout]
+            [odinodinstatic.rss :as rss]
             [odinodinstatic.util :refer [map-vals]]
             [stasis.core :as stasis]))
 
@@ -36,4 +37,5 @@
   "Converts raw content into HTML pages"
   (stasis/merge-page-sources
     {:blog-post-pages (blog-post-pages (:blog-posts content))
-     :blog-list       (blog-list-page (:blog-posts content))}))
+     :blog-list       (blog-list-page (:blog-posts content))
+     :rss             {"/atom.xml" (rss/atom-xml (:blog-posts content))}}))
