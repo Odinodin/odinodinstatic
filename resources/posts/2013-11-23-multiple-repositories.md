@@ -1,5 +1,6 @@
 :title Multiple repositories
-:published 2013-11-23 
+:published 2013-11-23
+:dek Saving time
 :body 
 
 Have you ever had the need to manage several related repositories in a project? Say for instance you want to pull or push changes to multiple repositories in one go. 

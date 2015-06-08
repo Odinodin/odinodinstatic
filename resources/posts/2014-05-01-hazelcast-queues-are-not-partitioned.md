@@ -1,5 +1,6 @@
-:title Hazelcast-køer er ikke partisjonerte
+:title Hazelcast queues er ikke partisjonerte
 :published 2014-05-01
+:dek Skral dokumentasjon
 :body
 
 Der. Da er det sagt, i tilfelle du leter i [dokumentasjonen](http://www.hazelcast.org/docs/latest/manual/html/queue.html) og savner en bedre beskrivelse. 

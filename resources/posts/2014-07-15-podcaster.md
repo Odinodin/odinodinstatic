@@ -1,5 +1,6 @@
 :title Podcaster for programmerere
 :published 2014-07-15
+:dek Tidsfordriv
 :body
 
 Podcaster er en fin måte å utnytte tiden til noe fornuftig når man gjør kjedelige ting som å pusse opp eller 

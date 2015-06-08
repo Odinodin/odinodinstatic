@@ -1,5 +1,6 @@
 :title Validering av Gradle properties
 :published 2014-09-14
+:dek Spar tid på bedre feilmeldinger
 :body
 
 Etter mange år med Maven, så er [Gradle](http://www.gradle.org) en befrielse å jobbe med. Du får 

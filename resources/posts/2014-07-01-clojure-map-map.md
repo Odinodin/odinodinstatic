@@ -1,5 +1,6 @@
 :title Mapping maps
 :published 2014-07-01
+:dek versatile utility function
 :body
 
 Når jeg jobber med Clojure kommer jeg av og til bort i tilfeller hvor jeg har en map og ønsker å transformere 
