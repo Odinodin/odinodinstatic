@@ -29,15 +29,12 @@
 (s/defn load-content :- {:blog-posts {v/Path v/BlogPost}} []
         {:blog-posts (->>
                        (mapdown/slurp-directory "resources/posts" #"\.md$")
-                       (map-keys #(str/replace % #"\.md$" "")))})
+                       (map-keys #(str/replace % #"\.md$" "/")))})
 
 
 (s/defn get-pages :- v/Routes []
         (-> (load-content)
-            p/create-pages
-            prepare-pages))
-
-
+            p/create-pages))
 
 (defn get-assets []
   (assets/load-assets "public" [#".*"]))

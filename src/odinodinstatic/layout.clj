@@ -30,4 +30,4 @@
        (link-to {:class "bottom-box"} "http://www.kodemaker.no" "Kodemaker")
        (link-to {:class "bottom-box"} "https://www.flickr.com/photos/odinodin" "Flickr")
        (link-to {:class "bottom-box"} "http://500px.com/odinodin" "500px")
-       (link-to {:class "bottom-box"} "atom.xml" "RSS")]]]))
+       (link-to {:class "bottom-box"} "/atom.xml" "RSS")]]]))

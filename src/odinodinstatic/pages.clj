@@ -4,10 +4,19 @@
             [odinodinstatic.layout :as layout]
             [odinodinstatic.rss :as rss]
             [odinodinstatic.util :refer [map-vals]]
-            [stasis.core :as stasis]))
+            [stasis.core :as stasis]
+            [odinodinstatic.highlight :as highlight]))
 
 (def pegdown-options  ;; https://github.com/sirthias/pegdown
   [:autolinks :fenced-code-blocks :strikethrough])
+
+(defn highlight-code [pages]
+  "Highlights code blocks"
+  ;; by sending a function and not a string containing HTML, stasis will only generate
+  ;; pages on-demand, thus improving the development process
+  (map-vals
+    #(fn [_] (highlight/highlight-code-blocks %))
+    pages))
 
 (defn render-blog-post [blog-post]
   (layout/layout-page
@@ -36,6 +45,6 @@
 (defn create-pages [content]
   "Converts raw content into HTML pages"
   (stasis/merge-page-sources
-    {:blog-post-pages (blog-post-pages (:blog-posts content))
+    {:blog-post-pages (-> content :blog-posts  blog-post-pages highlight-code)
      :blog-list       (blog-list-page (:blog-posts content))
      :rss             {"/atom.xml" (rss/atom-xml (:blog-posts content))}}))
