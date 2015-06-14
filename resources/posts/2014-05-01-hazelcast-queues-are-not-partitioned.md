@@ -3,11 +3,14 @@
 :dek Skral dokumentasjon
 :body
 
-Der. Da er det sagt, i tilfelle du leter i [dokumentasjonen](http://www.hazelcast.org/docs/latest/manual/html/queue.html) og savner en bedre beskrivelse. 
+There. I said it, just in case you were looking for answers in the [documentation](http://www.hazelcast.org/docs/latest/manual/html/queue.html)
+and was coming up empty handed.
 
-Først og fremst, jeg liker Hazelcast; det har et enkelt API, kan embeddes i applikasjonen din og funker ut av boksen når du trenger å distribuere datastrukturer på tvers av prosesser/maskiner.
+Firstly, I like Hazelcast; it has a simple API, can be embedded in your application and works out of the box when
+you need to distributed data structures across processes or machines.
 
-Så hvordan funker køene i Hazelcast, egentlig?
+So how do the queues work in Hazelcast?
+
 
 Ut fra diskusjon på [forumet deres](https://groups.google.com/forum/#!searchin/hazelcast/conceptual$20overview$20of$20how$20queues/hazelcast/Gvq2TTAaWrE/eogDIYadf2EJ), så tror jeg det følgende gjelder:
 
