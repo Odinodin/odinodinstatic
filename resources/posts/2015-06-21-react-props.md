@@ -1,4 +1,4 @@
-:title React PropTypes validation 
+:title React validation
 :published 2015-06-21
 :dek Create robust React components 
 :body
