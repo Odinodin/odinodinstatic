@@ -42,9 +42,17 @@
                                                            [:span.contrast {:class "post-date"} (:published post)]
                                                            [:span {:class "post-title"} " " (:title post)]))])])}))
 
+(defn- about-page []
+  {"/about/" (layout/layout-page
+               (list
+                 [:h1 "About"]
+                 [:p "I'm a curious developer who likes to learn. I work at Kodemaker, a Norwegian consultancy
+                  where I earn a living by editing text files."]))})
+
 (defn create-pages [content]
   "Converts raw content into HTML pages"
   (stasis/merge-page-sources
     {:blog-post-pages (-> content :blog-posts  blog-post-pages highlight-code)
      :blog-list       (blog-list-page (:blog-posts content))
+     :about-page      (about-page)
      :rss             {"/atom.xml" (rss/atom-xml (:blog-posts content))}}))

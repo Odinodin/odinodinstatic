@@ -19,6 +19,8 @@
        [:div {:class "title"} "Odin"]
        [:a {:class "nav-item"
             :href "/"} "Posts"]
+       [:a {:class "nav-item"
+            :href "/about/"} "About"]
        [:a {:class "nav-item ender"
             :href "http://github.com/odinodin/odinodinstatic"} "Source"]]
       [:div.content {:class "flex-item"} page]
