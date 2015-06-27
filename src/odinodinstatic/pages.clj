@@ -21,9 +21,10 @@
 (defn render-blog-post [blog-post]
   (layout/layout-page
     (list
-      [:h1 (:title blog-post)]
-      (when-let [dek (:dek blog-post)] [:h3 dek])
-      [:h5 (:published blog-post)]
+      [:h1 {:class "large-text-box"} (:title blog-post)]
+      [:div {:class "horizontal-left-list"}
+       [:div {:class "date-label"} (:published blog-post)]
+       (when-let [dek (:dek blog-post)] [:h3 {:class "subtitle"} dek])]
       (md/to-html (:body blog-post) pegdown-options))))
 
 (defn- blog-post-pages [blog-posts]
@@ -45,7 +46,7 @@
 (defn- about-page []
   {"/about/" (layout/layout-page
                (list
-                 [:h1 "About"]
+                 [:h1 {:class "large-text-box"} "About"]
                  [:p "I'm a curious developer who likes to learn. I work at Kodemaker, a Norwegian consultancy
                   where I earn a living by editing text files."]))})
 
