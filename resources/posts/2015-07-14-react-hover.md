@@ -1,6 +1,6 @@
-:title Hovering React styles
+:title React style that hover
 :published 2015-07-14
-:dek How to hover stuff using inline styles
+:dek How to enable hovering using inline styles
 :body
 
 [React](http://http://facebook.github.io/react/) introduces a number of interesting ideas, one of which is that 
@@ -16,23 +16,23 @@ that changes color when the mouse hovers over it.
 var Label = React.createClass({
 
     getInitialState : function() {
-      return {hovered: false}
+      return { hovered: false }
     },
 
     style: function() {
       if (this.state.hovered) {
-        return {backgroundColor: "red"}
+        return { backgroundColor: "red" }
       } else {
-        return {backgroundColor: "grey"}
+        return { backgroundColor: "grey" }
       }
     },
 
     onMouseOver : function () {
-      this.setState({hovered:true});
+      this.setState({ hovered:true });
     },
 
     onMouseOut : function () {
-      this.setState({hovered:false});
+      this.setState({ hovered:false });
     },
 
     render: function() {
@@ -55,7 +55,7 @@ var HoverMixin = {
 
     // Initial state
     componentWillMount: function() {
-      this.state = {hovered: false};
+      this.state = { hovered: false };
     },
     
     // Attach mouse listeners to the root node of the component
@@ -89,16 +89,12 @@ var Label = React.createClass({
     // Apply the mixin 
     mixins: [HoverMixin],
 
-    getInitialState : function() {
-      return {hovered: false}
-    },
-
     style: function() {
       // this.state.hovered comes from the mixin
       if (this.state.hovered) {
-        return {backgroundColor: "red"}
+        return { backgroundColor: "red" }
       } else {
-        return {backgroundColor: "grey"}
+        return { backgroundColor: "grey" }
       }
     },
 
