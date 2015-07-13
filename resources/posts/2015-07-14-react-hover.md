@@ -1,6 +1,6 @@
-:title React styles that hover
+:title Hovering React styles
 :published 2015-07-14
-:dek How to hover stuff with inline styles
+:dek How to hover stuff using inline styles
 :body
 
 [React](http://http://facebook.github.io/react/) introduces a number of interesting ideas, one of which is that 
