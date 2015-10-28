@@ -10,19 +10,21 @@
      [:meta {:name    "viewport"
              :content "width=device-width, initial-scale=1.0"}]
      [:title "Odin odin blog"]
-     [:link {:rel "stylesheet" :href "/css/responsive.css"}]]
+     [:link {:rel "stylesheet" :href "/css/responsive.css"}]
      [:link {:rel "shortcut icon" :type "image/png" :href "favicon.ico"}]
+     [:link {:rel "alternate" :type "application/atom+xml" :href "/atom.xml" :title "Odinodin blog"}]]
+
     [:body
      [:script (slurp (io/resource "public/scripts/analytics.js"))]
      [:div {:id "main" :class "vertical-list"}
       [:div {:class "navbar flex-item"}
        [:div {:class "title"} "Odin"]
        [:a {:class "nav-item"
-            :href "/"} "Posts"]
+            :href  "/"} "Posts"]
        [:a {:class "nav-item"
-            :href "/about/"} "About"]
+            :href  "/about/"} "About"]
        [:a {:class "nav-item ender"
-            :href "http://github.com/odinodin/odinodinstatic"} "Source"]]
+            :href  "http://github.com/odinodin/odinodinstatic"} "Source"]]
       [:div.content {:class "flex-item"} page]
       [:div {:id "bottom" :class "flex-item horizontal-list"}
        (link-to {:class "bottom-box"} "http://www.kodemaker.no/cv/odin/" "CV")
