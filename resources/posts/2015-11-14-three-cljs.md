@@ -1,5 +1,5 @@
 :title Attractive 3D with ClojureScript
-:published 2015-11-08
+:published 2015-11-14
 :dek What I learned from combining three.js and ClojureScript
 :body
 
